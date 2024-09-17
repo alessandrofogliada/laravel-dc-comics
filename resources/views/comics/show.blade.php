@@ -3,6 +3,7 @@
 @section('content')
 <div class="container my-5">
     <a class="btn btn-danger" href="{{ route('comics.index') }}"> << Torna alla Collezione</a>
+    <a href="{{route ('comics.edit' , $comic) }}" class="btn btn-primary" title="Modifica"><i class="fa-solid fa-pencil"></i></a>
     <h1>Descrizione : {{ $comic->title}}</h1>
     <img class="thumbnail" src="{{ $comic->thumb}}" alt="{{ $comic->title}}">
     <ul>
