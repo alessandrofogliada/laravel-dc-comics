@@ -20,6 +20,7 @@
                     <td> <img class="thumbnail" src="{{$comic->thumb}}" alt="{{$comic->title}}"> </td>
                     <td>{{$comic->title}}</td>
                     <td>{{$comic->price}}</td>
+                    <td><a href="{{route ('comics.show' , $comic) }}" class="btn btn-warning"><i class="fa-solid fa-circle-info"></i></a></td>
                 </tr>
             @endforeach
         </tbody>
