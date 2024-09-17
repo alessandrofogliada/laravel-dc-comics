@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Support\Str;
 
 class ComicsController extends Controller
 {
@@ -12,7 +13,7 @@ class ComicsController extends Controller
     public function index()
     {
         //elenco
-        $comics = Comic::all();
+        $comics = Comic::orderBy('id' , 'desc')->get();
         return view('comics.index' , compact('comics'));
     }
 
@@ -40,7 +41,10 @@ class ComicsController extends Controller
         $new_comic->series= $data['series'];
         $new_comic->sale_date= $data['sale_date'];
         $new_comic->type= $data['type'];
-        dd($new_comic);
+        $new_comic->save();
+
+
+        return redirect()->route('comics.show' , $new_comic->id);
    }
 
     /**
