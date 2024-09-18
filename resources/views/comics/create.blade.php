@@ -45,7 +45,7 @@
           @enderror
 
           <label for="id" class="form-label">Prezzo</label>
-          <input type="text" class="form-control  @error('price') is-invalid @enderror" name="price" id="price" aria-describedby="inserisci prezzo comics" value="{{old('price')}}">
+          <input type="number" class="form-control  @error('price') is-invalid @enderror" name="price" id="price" aria-describedby="inserisci prezzo comics" value="{{old('price')}}">
              @error('price')
             <small class="text-danger">Il campo deve avere almeno 1 caratteri</small> <br>
            @enderror

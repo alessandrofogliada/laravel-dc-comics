@@ -19,7 +19,7 @@
                     <td>{{$comic->id}}</td>
                     <td> <img class="thumbnail" src="{{$comic->thumb}}" alt="{{$comic->title}}"> </td>
                     <td>{{$comic->title}}</td>
-                    <td>{{$comic->price}}</td>
+                    <td>{{$comic->price}} $</td>
                     <td>
                         <a href="{{route ('comics.show' , $comic) }}" class="btn btn-success" title="Info"><i class="fa-solid fa-circle-info"></i></a>
                         <a href="{{route ('comics.edit' , $comic) }}" class="btn btn-warning" title="Modifica"><i class="fa-solid fa-wrench"></i></a>

@@ -33,13 +33,14 @@ class ComicRequest extends FormRequest
     }
 
     public function messages(){
-        return ['title.required'=>'il campo deve avere almeno 3 caratteri',
-        'description.required'=>'il campo deve avere almeno 3 caratteri',
-        'thumb.required'=>'il campo deve avere almeno 1 caratteri',
-        'price.required'=>'il campo deve avere almeno 1 caratteri',
-        'series.required'=>'il campo deve avere almeno 3 caratteri',
-        'sale_date.required'=>'il campo deve avere almeno 3 caratter',
-        'type.required'=>'il campo deve avere almeno 3 caratteri',
+        return ['
+                title.required'=>'il campo deve avere almeno 3 caratteri',
+                'description.required'=>'il campo deve avere almeno 3 caratteri',
+                'thumb.required'=>'il campo deve avere almeno 1 caratteri',
+                'price.required'=>'il campo deve avere almeno 1 caratteri',
+                'series.required'=>'il campo deve avere almeno 3 caratteri',
+                'sale_date.required'=>'il campo deve avere almeno 3 caratter',
+                'type.required'=>'il campo deve avere almeno 3 caratteri',
     ];
     }
 }

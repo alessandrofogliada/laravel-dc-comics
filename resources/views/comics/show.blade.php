@@ -9,7 +9,7 @@
     <ul>
         <li>ID : {{ $comic->id}}</li>
         <li>title : {{ $comic->title}}</li>
-        <li>price : {{ $comic->price}}</li>
+        <li>price : {{ $comic->price}} $</li>
         <li>series : {{ $comic->series}}</li>
         <li>sale_date : {{ $comic->sale_date}}</li>
         <li>type : {{ $comic->type}}</li>
