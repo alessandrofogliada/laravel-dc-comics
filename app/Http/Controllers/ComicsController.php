@@ -32,29 +32,29 @@ class ComicsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
         //dove atterra il form di creazione
 
            // se la validazione non viene in autorizzata si viene reinidirazzati nella sessione con gli errori
 
-           $request->validate([
-            'title'=>'required|min:3|max:255',
-            'description'=>'required|min:3|max:255',
-            'thumb'=>'required|min:1|max:255',
-            'price'=>'required|min:1',
-            'series'=>'required|min:1|max:255',
-            'sale_date'=>'required|min:1|max:255',
-            'type'=>'required|min:1|max:255',
-        ], //customiziamo gli errori in italiano
-        ['title.required'=>'il campo deve avere almeno 3 caratteri',
-            'description.required'=>'il campo deve avere almeno 3 caratteri',
-            'thumb.required'=>'il campo deve avere almeno 1 caratteri',
-            'price.required'=>'il campo deve avere almeno 1 caratteri',
-            'series.required'=>'il campo deve avere almeno 3 caratteri',
-            'sale_date.required'=>'il campo deve avere almeno 3 caratter',
-            'type.required'=>'il campo deve avere almeno 3 caratteri',
-    ]);
+    //        $request->validate([
+    //         'title'=>'required|min:3|max:255',
+    //         'description'=>'required|min:3|max:255',
+    //         'thumb'=>'required|min:1|max:255',
+    //         'price'=>'required|min:1',
+    //         'series'=>'required|min:1|max:255',
+    //         'sale_date'=>'required|min:1|max:255',
+    //         'type'=>'required|min:1|max:255',
+    //     ], //customiziamo gli errori in italiano
+    //     ['title.required'=>'il campo deve avere almeno 3 caratteri',
+    //         'description.required'=>'il campo deve avere almeno 3 caratteri',
+    //         'thumb.required'=>'il campo deve avere almeno 1 caratteri',
+    //         'price.required'=>'il campo deve avere almeno 1 caratteri',
+    //         'series.required'=>'il campo deve avere almeno 3 caratteri',
+    //         'sale_date.required'=>'il campo deve avere almeno 3 caratter',
+    //         'type.required'=>'il campo deve avere almeno 3 caratteri',
+    // ]);
 
         $data = $request->all();
         $data['slug']= Helper::generateSlug($data['title'] , Comic::class);

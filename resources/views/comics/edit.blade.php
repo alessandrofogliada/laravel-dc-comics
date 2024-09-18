@@ -4,6 +4,18 @@
 <div class="container my-5">
     <h1>Modifica : {{ $comic->title}} </h1>
 
+    @if ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error )
+                            <li>
+                                {{ $error }}
+                            </li>
+                            @endforeach
+                        </ul>
+                </div>
+            @endif
+
     <form action="{{ route('comics.update' , $comic) }}" method="POST">
         @csrf
         @method('PUT')

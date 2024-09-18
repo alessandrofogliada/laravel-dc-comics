@@ -12,6 +12,7 @@ class Comic extends Model
     // in questo modo faccio capire al model quali campi deve compilare
     protected $fillable =[
         'title',
+        'slug',
         'description',
         'thumb',
         'price',
