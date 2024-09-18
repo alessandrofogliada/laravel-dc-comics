@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use App\Models\Comic;
+use App\Functions\Helper;
 
 
 class ComicSeeder extends Seeder
@@ -19,6 +20,7 @@ class ComicSeeder extends Seeder
         foreach ($array_comics as $comic){
             $new_comic = new Comic();
             $new_comic->title = $comic['title'];
+            $new_comic->slug = Helper::generateSlug($new_comic->title , Comic::class);
             $new_comic->description = $comic['description'];
             $new_comic->thumb = $comic['thumb'];
             $new_comic->price = $comic['price'];
