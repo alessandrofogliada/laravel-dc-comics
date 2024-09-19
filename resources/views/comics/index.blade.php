@@ -24,7 +24,7 @@
                         <a href="{{route ('comics.show' , $comic) }}" class="btn btn-success" title="Info"><i class="fa-solid fa-circle-info"></i></a>
                         <a href="{{route ('comics.edit' , $comic) }}" class="btn btn-warning" title="Modifica"><i class="fa-solid fa-wrench"></i></a>
 
-                        <form action="{{route ('comics.destroy' , $comic) }}" method="POST" class="d-inline" onsubmit="return confirm('sei socuro di voler eliminare il fumetto {{ $comic->title}}')">
+                        <form action="{{route ('comics.destroy' , $comic) }}" method="POST" class="d-inline" onsubmit="return confirm('sei sicuro di voler eliminare il fumetto {{ $comic->title}}')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" title="Elimina"><i class="fa-solid fa-trash"></i></button>
